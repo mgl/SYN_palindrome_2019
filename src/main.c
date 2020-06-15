@@ -29,7 +29,6 @@ int pal_main(int ac, char **av)
         return (EXIT_SUCCESS);
     }
     if (ac < 2 || get_params(params, ac, av) == -1) {
-        fprintf(stderr, "invalid argument\n");
         free(params);
         return (84);
     }
