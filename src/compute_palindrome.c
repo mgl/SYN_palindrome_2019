@@ -23,7 +23,7 @@ char *get_base(int base)
 int check_result(params_t *params, int res)
 {
     if (params->pa1 != -1)
-        return (is_str_palindromic(my_putnbr_base(res, get_base(params->base))) && res == params->pa1);
+        return (res == params->pa1);
     else if (params->nb != -1 && res > 0)
         return (is_str_palindromic(\
         my_putnbr_base(res, get_base(params->base))));
@@ -33,24 +33,23 @@ int check_result(params_t *params, int res)
 void compute_transform(params_t *params)
 {
     int res = params->nb;
-    int tmp = 0;
-
 
     for (int i = 0; i <= params->imax; i++) {
-        if ((tmp = i >= params->imin && check_result(params, res))) {
+        if (i >= params->imin && check_result(params, res)) {
             my_printf("%d leads to %d in %d iteration(s) in base %d\n", \
             params->nb, res, i, params->base);
             params->solved = 1;
-        }
-        if (!tmp && params->pa1 != -1)
             break;
+        }
         res += reverse_nbr(res, params);
     }
 }
 
 void compute_obtain(params_t *params)
 {
-    for (int i = 0; i <= params->pa1; i++) {
+    int save = params->pa1;
+
+    for (int i = 0; i <= save; i++) {
         params->nb = i;
         compute_transform(params);
     }
