@@ -27,6 +27,10 @@ int is_str_palindromic(char *str)
 
     if (!str)
         return (0);
+    if (my_strlen(str) == 1) {
+        free(str);
+        return (1);
+    }
     right = my_strlen(str) - 1;
     while (left < right) {
         if (str[left] != str[right]) {
