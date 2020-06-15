@@ -26,11 +26,14 @@ int my_squareroot_synthesis(int nb)
     int i = 0;
 
     if (nb < 0)
-        return (0);
+        return (-1);
     if (nb == 1 || nb == 0)
         return (nb);
     for (; res < nb; i++)
-        res = i * i;
+        if (i >= 46340)
+            return (-1);
+        else
+            res = i * i;
     i -= 1;
     if (i * i == nb)
         return (i);
