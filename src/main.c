@@ -18,7 +18,7 @@ void print_params(params_t *params)
     printf("imax = %d\n", params->imax);
 }
 
-int main(int ac, char **av)
+int pal_main(int ac, char **av)
 {
     params_t *params = init_params();
 
@@ -29,6 +29,7 @@ int main(int ac, char **av)
         return (EXIT_SUCCESS);
     }
     if (ac < 2 || get_params(params, ac, av) == -1) {
+        fprintf(stderr, "invalid argument\n");
         free(params);
         return (84);
     }

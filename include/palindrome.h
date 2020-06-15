@@ -53,4 +53,8 @@ int is_nb_palindromic(int nb);
 int is_str_palindromic(char *str);
 int reverse_nbr(int res, params_t *params);
 
+/* main.c */
+
+int pal_main(int ac, char **av);
+
 #endif /* !PALINDROME_H_ */

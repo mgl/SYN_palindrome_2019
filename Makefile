@@ -8,6 +8,7 @@
 NAME = palindrome
 
 SRC = 	src/main.c						\
+		src/start.c						\
 		src/params.c					\
 		src/valid_params.c				\
 		src/compute_palindrome.c		\
