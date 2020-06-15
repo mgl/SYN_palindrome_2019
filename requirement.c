@@ -37,10 +37,3 @@ int my_squareroot_synthesis(int nb)
     else
         return (-1);
 }
-
-int main(void)
-{
-    for (int i = -5; i < 16; i++)
-        printf("%d! = %d\n", i, my_factrec_synthesis(i));
-    return (0);
-}
