@@ -71,7 +71,8 @@ Test(errors, sixty_four, .init=redirect_all_stdout, .exit_code=0)
 Test(errors, min_six, .init=redirect_all_stdout, .exit_code=0)
 {
     pal_main(5, min_six);
-    cr_assert_stdout_eq_str("3 leads to 363 in 6 iteration(s) in base 10\n", "");
+    cr_assert_stdout_eq_str(\
+    "3 leads to 363 in 6 iteration(s) in base 10\n", "");
 }
 
 Test(errors, no_sol, .init=redirect_all_stdout, .exit_code=0)
