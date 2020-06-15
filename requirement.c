@@ -5,8 +5,6 @@
 ** my_factrec_synhesis
 */
 
-#include <stdio.h>
-
 int my_factrec_synthesis(int nb)
 {
     int res = 1;
