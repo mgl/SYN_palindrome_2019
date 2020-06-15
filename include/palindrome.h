@@ -61,4 +61,12 @@ int pal_main(int ac, char **av);
 
 void write_to_error(char *str, int size);
 
+/* args.c */
+
+int n_param(params_t *params, char *param, int val);
+int p_param(params_t *params, char *param, int val);
+int b_param(params_t *params, char *param, int val);
+int imin_param(params_t *params, char *param, int val);
+int imax_param(params_t *params, char *param, int val);
+
 #endif /* !PALINDROME_H_ */

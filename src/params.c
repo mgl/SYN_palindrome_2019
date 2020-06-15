@@ -11,17 +11,14 @@
 
 int param_type(params_t *params, char *param, int val)
 {
-    if (my_strcmp(param, "-n") == 0)
-        params->nb = val;
-    else if (my_strcmp(param, "-p") == 0)
-        params->pa1 = val;
-    else if (my_strcmp(param, "-b") == 0)
-        params->base = val;
-    else if (my_strcmp(param, "-imin") == 0)
-        params->imin = val;
-    else if (my_strcmp(param, "-imax") == 0)
-        params->imax = val;
-    else {
+    int done = 0;
+
+    done += n_param(params, param, val);
+    done += p_param(params, param, val);
+    done += b_param(params, param, val);
+    done += imin_param(params, param, val);
+    done += imax_param(params, param, val);
+    if (done == 0) {
         write_to_error("invalid argument\n", my_strlen("invalid argument\n"));
         return (-1);
     }

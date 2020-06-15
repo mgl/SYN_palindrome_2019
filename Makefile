@@ -14,12 +14,13 @@ SRC = 	src/main.c						\
 		src/compute_palindrome.c		\
 		src/write_error.c				\
 		src/utils.c						\
+		src/args.c						\
 
 OBJ = $(SRC:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Wshadow -Iinclude
+CFLAGS = -Wall -Wextra -Wshadow -Iinclude -g
 
 LIB = -Llib/my -lmy
 

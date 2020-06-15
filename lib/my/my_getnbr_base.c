@@ -30,5 +30,7 @@ int my_getnbr_base(char const *str, char const *base)
         result += get_char_value(str[i], base, base_len) * p;
         p *= base_len;
     }
+    if (base)
+        free(base);
     return (result);
 }
