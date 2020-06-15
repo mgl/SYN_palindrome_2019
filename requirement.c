@@ -30,7 +30,7 @@ int my_squareroot_synthesis(int nb)
     if (nb == 1 || nb == 0)
         return (nb);
     for (; res < nb; i++)
-        if (i >= 46340)
+        if (i >= 46341)
             return (-1);
         else
             res = i * i;
