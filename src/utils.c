@@ -74,15 +74,18 @@ int get_nb_digits(int nb)
 
 char *my_itoa(int nb)
 {
-    int digits = get_nb_digits(nb);
-    char *buffer = malloc((digits + 1) * sizeof(char));
+    char *res = malloc((get_nb_digits(nb) + 1) * sizeof(char));
+    int i = 0;
 
-    if (buffer) {
-        snprintf(buffer, digits + 1, "%d", nb);
-        if (buffer[0] != '-')
-            return (buffer);
-        else
-            free(buffer);
+    if (res != NULL) {
+        while (nb > 9) {
+            res[i] = nb % 10 + '0';
+            nb /= 10;
+            i++;
+        }
+        res[i] = nb % 10 + '0';
+        res[i + 1] = '\0';
+        my_revstr(res);
     }
-    return (NULL);
+    return (res);
 }

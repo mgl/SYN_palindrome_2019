@@ -12,6 +12,7 @@ SRC = 	src/main.c						\
 		src/params.c					\
 		src/valid_params.c				\
 		src/compute_palindrome.c		\
+		src/write_error.c				\
 		src/utils.c						\
 
 OBJ = $(SRC:.c=.o)

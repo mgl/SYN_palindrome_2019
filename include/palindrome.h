@@ -34,8 +34,8 @@ int str_isnum(char *str);
 
 /* params.c */
 
-params_t *init_params(void);
-int get_params(params_t *params, int ac, char **av);
+params_t *init_pal_params(void);
+int get_pal_params(params_t *params, int ac, char **av);
 
 /* valid_params.c */
 
@@ -56,5 +56,9 @@ int reverse_nbr(int res, params_t *params);
 /* main.c */
 
 int pal_main(int ac, char **av);
+
+/* write_error.c */
+
+void write_to_error(char *str, int size);
 
 #endif /* !PALINDROME_H_ */

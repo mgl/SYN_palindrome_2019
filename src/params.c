@@ -11,18 +11,18 @@
 
 int param_type(params_t *params, char *param, int val)
 {
-    if (strcmp(param, "-n") == 0)
+    if (my_strcmp(param, "-n") == 0)
         params->nb = val;
-    else if (strcmp(param, "-p") == 0)
+    else if (my_strcmp(param, "-p") == 0)
         params->pa1 = val;
-    else if (strcmp(param, "-b") == 0)
+    else if (my_strcmp(param, "-b") == 0)
         params->base = val;
-    else if (strcmp(param, "-imin") == 0)
+    else if (my_strcmp(param, "-imin") == 0)
         params->imin = val;
-    else if (strcmp(param, "-imax") == 0)
+    else if (my_strcmp(param, "-imax") == 0)
         params->imax = val;
     else {
-        fprintf(stderr, "%s", "invalid argument\n");
+        write_to_error("invalid argument\n", my_strlen("invalid argument\n"));
         return (-1);
     }
     return (0);
@@ -37,7 +37,7 @@ int get_param(int param, params_t *params, int ac, char **av)
     return (param_type(params, av[param - 1], my_getnbr(av[param])));
 }
 
-int get_params(params_t *params, int ac, char **av)
+int get_pal_params(params_t *params, int ac, char **av)
 {
     int res = 0;
 
@@ -46,7 +46,8 @@ int get_params(params_t *params, int ac, char **av)
             i++;
             res = get_param(i, params, ac, av);
         } else {
-            fprintf(stderr, "%s", "invalid argument\n");
+            write_to_error("invalid argument\n", \
+            my_strlen("invalid argument\n"));
             return (-1);
         }
         if (res == -1)
@@ -57,7 +58,7 @@ int get_params(params_t *params, int ac, char **av)
     return (0);
 }
 
-params_t *init_params(void)
+params_t *init_pal_params(void)
 {
     params_t *params = malloc(sizeof(params_t));
 

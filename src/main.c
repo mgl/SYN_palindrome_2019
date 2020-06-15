@@ -6,35 +6,34 @@
 */
 
 #include "palindrome.h"
-#include <stdio.h>
 #include "help.h"
 
 void print_params(params_t *params)
 {
-    printf("nb = %d\n", params->nb);
-    printf("pa1 = %d\n", params->pa1);
-    printf("base = %d\n", params->base);
-    printf("imin = %d\n", params->imin);
-    printf("imax = %d\n", params->imax);
+    my_printf("nb = %d\n", params->nb);
+    my_printf("pa1 = %d\n", params->pa1);
+    my_printf("base = %d\n", params->base);
+    my_printf("imin = %d\n", params->imin);
+    my_printf("imax = %d\n", params->imax);
 }
 
 int pal_main(int ac, char **av)
 {
-    params_t *params = init_params();
+    params_t *params = init_pal_params();
 
     if (!params)
         return (84);
     else if (ac == 2 && my_strcmp(av[1], "-h") == 0) {
-        printf("%s", HELP_MSG);
+        my_printf("%s", HELP_MSG);
         return (EXIT_SUCCESS);
     }
-    if (ac < 2 || get_params(params, ac, av) == -1) {
+    if (ac < 2 || get_pal_params(params, ac, av) == -1) {
         free(params);
         return (84);
     }
     compute(params);
     if (!params->solved)
-        printf("no solution\n");
+        my_printf("no solution\n");
     free(params);
     return (EXIT_SUCCESS);
 }

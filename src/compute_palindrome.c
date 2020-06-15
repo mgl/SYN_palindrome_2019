@@ -6,9 +6,7 @@
 */
 
 #include "palindrome.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 char *get_base(int base)
 {
@@ -38,7 +36,7 @@ void compute_transform(params_t *params)
 
     for (int i = 0; i <= params->imax; i++) {
         if (i >= params->imin && check_result(params, res)) {
-            printf("%d leads to %d in %d iteration(s) in base %d\n", \
+            my_printf("%d leads to %d in %d iteration(s) in base %d\n", \
             params->nb, res, i, params->base);
             params->solved = 1;
             break;
