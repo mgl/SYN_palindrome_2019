@@ -13,10 +13,12 @@ int reverse_nbr(int res, params_t *params)
     char *nbr = my_putnbr_base(res, \
     get_base(params->base));
     int result = 0;
+    char *base = get_base(params->base);
 
     my_revstr(nbr);
-    result = my_getnbr_base(nbr, get_base(params->base));
-    free(nbr);
+    result = my_getnbr_base(nbr, base);
+    if (nbr)
+        free(nbr);
     return (result);
 }
 

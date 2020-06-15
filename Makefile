@@ -15,6 +15,7 @@ SRC = 	src/main.c						\
 		src/write_error.c				\
 		src/utils.c						\
 		src/args.c						\
+		src/transform.c					\
 
 OBJ = $(SRC:.c=.o)
 

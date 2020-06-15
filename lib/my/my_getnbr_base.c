@@ -15,7 +15,7 @@ int get_char_value(char c, char const *base, int base_len)
     return (0);
 }
 
-int my_getnbr_base(char const *str, char const *base)
+int my_getnbr_base(char const *str, char *base)
 {
     int base_len = 0;
     int str_len = 0;

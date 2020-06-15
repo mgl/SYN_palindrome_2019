@@ -22,7 +22,7 @@ int my_pow(int const nb, int const p);
 
 /* Base conversion */
 
-int my_getnbr_base(char const *str, char const *base);
+int my_getnbr_base(char const *str, char *base);
 char *my_putnbr_base(int nbr, char *base);
 
 /* Strings operations */

@@ -30,18 +30,6 @@ int check_result(params_t *params, int res)
     return (0);
 }
 
-int transform(params_t *params, int i, int res)
-{
-    if (i >= params->imin && check_result(params, res)) {
-        my_printf("%d leads to %d in %d iteration(s) in base %d\n", \
-        params->nb, res, i, params->base);
-        params->solved = 1;
-        if (params->pa1 == -1)
-            return (1);
-    }
-    return (0);
-}
-
 void compute_transform(params_t *params)
 {
     int res = params->nb;

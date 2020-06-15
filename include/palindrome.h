@@ -45,6 +45,7 @@ int valid_params(params_t *params);
 
 void compute(params_t *params);
 char *get_base(int base);
+int check_result(params_t *params, int res);
 
 /* utils.c */
 
@@ -68,5 +69,9 @@ int p_param(params_t *params, char *param, int val);
 int b_param(params_t *params, char *param, int val);
 int imin_param(params_t *params, char *param, int val);
 int imax_param(params_t *params, char *param, int val);
+
+/* transform.c */
+
+int transform(params_t *params, int i, int res);
 
 #endif /* !PALINDROME_H_ */
