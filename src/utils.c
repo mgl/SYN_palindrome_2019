@@ -15,7 +15,7 @@ int reverse_nbr(int res, params_t *params)
     int result = 0;
 
     my_revstr(nbr);
-    result = my_getnbr_base(nbr, "0123456789");
+    result = my_getnbr_base(nbr, get_base(params->base));
     free(nbr);
     return (result);
 }
