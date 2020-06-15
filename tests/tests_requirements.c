@@ -87,3 +87,17 @@ Test(nb, squareroot)
 
     cr_assert_eq(res, 128);
 }
+
+Test(big_nb_2, squareroot)
+{
+    int res = my_squareroot_synthesis(16777216);
+
+    cr_assert_eq(res, 4096);
+}
+
+Test(big_nb_3, squareroot)
+{
+    int res = my_squareroot_synthesis(268435456);
+
+    cr_assert_eq(res, 16384);
+}
