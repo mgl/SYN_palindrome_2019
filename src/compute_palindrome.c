@@ -39,7 +39,8 @@ void compute_transform(params_t *params)
             my_printf("%d leads to %d in %d iteration(s) in base %d\n", \
             params->nb, res, i, params->base);
             params->solved = 1;
-            break;
+            if (params->pa1 != -1)
+                break;
         }
         res += reverse_nbr(res, params);
     }

@@ -38,5 +38,7 @@ int valid_params(params_t *params)
         return (-1);
     if (!check_base(params) || !check_iter(params))
         return (-1);
+    if (params->pa1 != -1 && !is_nb_palindromic(params->pa1))
+        return (-1);
     return (0);
 }
