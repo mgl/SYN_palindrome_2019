@@ -37,7 +37,7 @@ int valid_params(params_t *params)
     if (incompatible_params(params) == -1 ||\
         params->imin > params->imax)
         return (-1);
-    else if (!check_base(params) || !check_iter(params)\
+    else if (!check_base(params) || !check_iter(params) \
     || check_for_pal(params))
         return (-1);
     return (0);
