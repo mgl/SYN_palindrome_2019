@@ -17,6 +17,12 @@ void print_params(params_t *params)
     my_printf("imax = %d\n", params->imax);
 }
 
+void print_status(params_t *params)
+{
+    if (!params->solved)
+        my_printf("no solution\n");
+}
+
 int pal_main(int ac, char **av)
 {
     params_t *params = init_pal_params();
@@ -27,13 +33,14 @@ int pal_main(int ac, char **av)
         my_printf("%s", HELP_MSG);
         return (EXIT_SUCCESS);
     }
-    if (ac < 2 || get_pal_params(params, ac, av) == -1) {
+    else {
+        if (ac < 2 || get_pal_params(params, ac, av) == -1) {
+            free(params);
+            return (84);
+        }
+        compute(params);
+        print_status(params);
         free(params);
-        return (84);
+        return (EXIT_SUCCESS);
     }
-    compute(params);
-    if (!params->solved)
-        my_printf("no solution\n");
-    free(params);
-    return (EXIT_SUCCESS);
 }
